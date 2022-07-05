@@ -5,11 +5,6 @@ let nssfDeduct = document.querySelectorAll(".nssfDeduct");
 let NssfRates = document.querySelectorAll(".nssfRates");
 let nhifDeduct = document.querySelectorAll(".nhifDeduct");
 
- //alert(taxPeriod[0].classList)
-
-
- //taxPeriod[0].addEventListener("change", ()=>{alert("checkbox clicked!!!")})
- //In variables
  let period = 'month';
  let nssf = "yes";
  let rates = "new"
@@ -155,11 +150,11 @@ function NssfDeduction(sal, choice, prd){
       let deduct = monthlySal *0.06;
       console.log(`NSSF Deductions ${deduct}`)
       return deduct
-      //console.log("The salary is less than 60000", sal)
+    
      }else{
        let deduct = ((monthlySal - 6000) * 0.06)+360;
        console.log(`NSSF Deductions ${deduct}`)
-      //console.log("The salary is grater than 6000", sal)
+     
       return deduct
      }
     //console.log("The NSSF should be deducted!!!")
@@ -179,25 +174,7 @@ checkbox()
   let tax =   TaxDeduction(BasicSal, period, nssfDeduction);
   let taxNetOffRelief = (tax - 2400) < 0 ?  "0.00" : tax-2400;
   let TotalDeductions = tax + nhifDeduction + nssfDeduction;
-  
-  //let benefits = totalBenefits.value;
-  //TaxDeduction(BasicSal, period);
-  // console.log(NssfDeduction(BasicSal, nssf, period))
-  // console.log(`
-  // Income before pension : ${salary} \n
-  // Deductible NSSF : ${nssfDeduction} \n
-  // Income afer pension :  ${+salary - nssfDeduction} \n
-  // Benefits in kind : ${totalBenefits.value} \n
-  // Taxable income : ${BasicSal} \n
-  // Tax on taxable income : ${tax} \n
-  // personal relief : 2,400 \n
-  // Tax net off Relief : ${taxNetOffRelief} \n
-  // PAYE : 24000 \n
-  // Chargeable Income : ${BasicSal} \n
-  // NHIF contribution : ${NHIFDeduction(BasicSal, period)} \n
-  // NET Pay : ${BasicSal - TotalDeductions}
 
-  // `)
 
 
 
@@ -206,10 +183,10 @@ checkbox()
    //Posting the results to the table
  let allCells = document.querySelectorAll(".results-amount")
  let resultsArr = [salary, nssfDeduction, (+salary - nssfDeduction), totalBenefits.value, (BasicSal-nssfDeduction), tax,  2400, taxNetOffRelief, 2400, BasicSal, nhifDeduction, (BasicSal-TotalDeductions)]
-//console.log(resultsArr)
+
  for(i=0 ; i < allCells.length; i++){
   allCells[i].innerText = resultsArr[i]
-  //console.log(allCells[i],resultsArr[i]);
+ 
  }
 
 
